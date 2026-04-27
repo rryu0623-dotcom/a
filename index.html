@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     
     <style>
+        /* ================= 頁面基礎樣式 ================= */
         body {
             font-family: sans-serif;
             margin: 0;
@@ -203,6 +205,29 @@
             margin-bottom: 4px;
             border-radius: 2px;
         }
+        /*第二十六題*/
+        .q26-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px; /* 讓圖片之間有點間距 */
+        }
+        .q26-img-left {
+            width: 33%;
+            height: 300px;
+            border-radius: 18px;
+            object-fit: cover; /* 關鍵：保持圖片比例，裁切多餘部分，不變形 */
+        }
+        .q26-img-center {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* 設定為 50% 會變成完美的圓形 */
+            object-fit: cover; /* 關鍵：保持圖片比例，不變形 */
+        }
+        .q26-img-right {
+            width: 33%;
+            height: 300px;
+        }
     </style>
 </head>
 <body>
@@ -312,8 +337,7 @@
                 </div>
                 
                 <div class="q23-image-wrapper">
-                    <img src="https://www.ncu.edu.tw/var/file/0/1000/img/3/478253078.jpeg" class="q23-preview-image">
-                </div>
+<img src="https://www.ncu.edu.tw/var/file/0/1000/img/3/478253078.jpeg" class="q23-preview-image">                </div>
 
                 <div id="infoDetails" class="q23-details-section">
                     <div class="q23-detail-item">修改日期: 2017/10/12</div>
@@ -331,9 +355,10 @@
 
         if(actionBtn && infoDetails) {
             actionBtn.addEventListener('click', function() {
-
+                // Toggle 展開與收起 class
                 infoDetails.classList.toggle('show');
                 
+                // 更新按鈕文字
                 if (infoDetails.classList.contains('show')) {
                     actionBtn.textContent = '收起資訊'; 
                 } else {
@@ -342,6 +367,13 @@
             });
         }
     </script>
-
+<div class="question-section q26-wrapper">
+        <h2>第二十六題</h2>
+        <div class="q26-image-container">
+            <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" alt="巴黎鐵塔-不變形" class="q26-img-left">
+            <img src="https://images.unsplash.com/photo-1516483638261-f40889d0733a?auto=format&fit=crop&w=300&q=80" alt="風景-圓形" class="q26-img-center">
+            <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" alt="巴黎鐵塔-變形" class="q26-img-right">
+        </div>
+    </div>
 </body>
 </html>
