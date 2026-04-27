@@ -233,6 +233,69 @@
             height: 300px;
             /* 故意不加 object-fit: cover，圖片就會被強制拉扯變形 (distortion) */
         }
+        /* ================= 第二十七題 CSS ================= */
+        .q27-wrapper {
+            background-color: #4daaf5; /* 配合圖片的淺藍色背景 */
+            padding: 40px 20px;
+        }
+        .q27-wrapper h2 {
+            color: #fff; /* 背景是藍色，標題換成白色比較清楚 */
+            border-bottom: 2px solid #fff;
+        }
+        .q27-layout-container {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 600px; /* 限制最大寬度，大螢幕看起來像圖 (b) */
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* 上下三個區塊的間距 */
+        }
+        
+        /* 綠色區塊 (永遠維持一整塊) */
+        .q27-green-box {
+            background-color: #a1ce4f;
+            height: 100px;
+            border-radius: 4px;
+        }
+
+        /* 藍色區塊容器 (預設排 3 列) */
+        .q27-blue-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .q27-blue-box {
+            background-color: #00c6d7;
+            height: 100px;
+            border-radius: 4px;
+        }
+
+        /* 灰色區塊容器 (預設排 4 列) */
+        .q27-gray-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .q27-gray-box {
+            background-color: #e9ecef;
+            height: 60px;
+            border-radius: 4px;
+        }
+
+        /* ====== 響應式設定：當寬度小於 480px 時觸發 ====== */
+        @media (max-width: 479px) {
+            .q27-blue-container {
+                grid-template-columns: 1fr; /* 藍色變成直排 1 欄 */
+            }
+            .q27-gray-container {
+                grid-template-columns: repeat(2, 1fr); /* 灰色變成 2 欄 (2x2) */
+            }
+            .q27-green-box, .q27-blue-box {
+                height: 80px; /* 手機版稍微調低高度，比例比較好看 */
+            }
+        }
     </style>
 </head>
 <body>
@@ -378,6 +441,29 @@
             <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" alt="巴黎鐵塔-不變形" class="q26-img-left">
           <img src="https://picsum.photos/id/28/300/300" alt="風景-圓形" class="q26-img-center">
             <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" alt="巴黎鐵塔-變形" class="q26-img-right">
+        </div>
+    </div>
+
+    <div class="question-section q27-wrapper">
+        <h2>第二十七題</h2>
+        
+        <div class="q27-layout-container">
+            
+            <div class="q27-green-box"></div>
+            
+            <div class="q27-blue-container">
+                <div class="q27-blue-box"></div>
+                <div class="q27-blue-box"></div>
+                <div class="q27-blue-box"></div>
+            </div>
+            
+            <div class="q27-gray-container">
+                <div class="q27-gray-box"></div>
+                <div class="q27-gray-box"></div>
+                <div class="q27-gray-box"></div>
+                <div class="q27-gray-box"></div>
+            </div>
+            
         </div>
     </div>
 </body>
