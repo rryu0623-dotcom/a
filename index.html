@@ -209,24 +209,29 @@
         .q26-image-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 15px; /* 讓圖片之間有點間距 */
+            justify-content: center; /* 關鍵修改：讓三張圖片置中靠攏，不要散開 */
+            gap: 15px; /* 稍微留一點點間距，貼近老師的範例 */
         }
         .q26-img-left {
             width: 33%;
             height: 300px;
             border-radius: 18px;
-            object-fit: cover; /* 關鍵：保持圖片比例，裁切多餘部分，不變形 */
+            object-fit: cover; /* 不變形 */
         }
         .q26-img-center {
             width: 150px;
             height: 150px;
-            border-radius: 50%; /* 設定為 50% 會變成完美的圓形 */
-            object-fit: cover; /* 關鍵：保持圖片比例，不變形 */
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 1px solid #000; 
+            padding: 4px; /* 新增這行：製造圖片與邊框之間的空白 */
+            background-color: #fff; /* 新增這行：讓空白的部分是白色的 */
+            box-sizing: border-box; /* 新增這行：確保加上 padding 後，總大小依然維持規定的 150px */
         }
         .q26-img-right {
             width: 33%;
             height: 300px;
+            /* 故意不加 object-fit: cover，圖片就會被強制拉扯變形 (distortion) */
         }
     </style>
 </head>
@@ -371,7 +376,7 @@
         <h2>第二十六題</h2>
         <div class="q26-image-container">
             <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" alt="巴黎鐵塔-不變形" class="q26-img-left">
-            <img src="https://images.unsplash.com/photo-1516483638261-f40889d0733a?auto=format&fit=crop&w=300&q=80" alt="風景-圓形" class="q26-img-center">
+          <img src="https://picsum.photos/id/28/300/300" alt="風景-圓形" class="q26-img-center">
             <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" alt="巴黎鐵塔-變形" class="q26-img-right">
         </div>
     </div>
