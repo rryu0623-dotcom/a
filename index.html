@@ -1,190 +1,114 @@
 <!DOCTYPE html>
-<html>
 <head>
-</head>
-<body>
-    <p>第十題</p>
-    <p>Code example:</p>
-    <pre><code>var person = {
-  firstName: "仲毅",
-  lastName : "王",
-  studentId: "113403057"
-}</code></pre>
-
-<p>第十二題</p>
- <form>
-  <label for="firstName">FirstName:</label><br>
-  <input type="text" id="firstName" name="firstName" value="Your first name"><br>
-  <label for="lastName">LastName:</label><br>
-  <input type="text" id="lastName" name="lastName" value="Your last name"><br>
-  <label for="id">Student ID:</label><br>
-  <input type="text" id="id" name="id" value="Your student ID"><br><br>
-  <input type="submit" value="Submit">
-  <input type="reset" value="Reset">
-</form>
-
-<p>第十四題</p>
-<svg width="400" height="400">
-    <rect width="100" height="100" style="fill:blue;stroke-width:3px;stroke:rgb(0,0,0)" />
-    <circle cx="100" cy="50" r="40" style="fill:yellow;stroke-width:3px;stroke:red" />
-</svg>
-</body>
-</html>
-
-<p>第十六題</p>
-<html>
-<head>
-<style>
-    p.one  {
-       background-color: lightblue;
-       border : 7px double orangered;
-    }
-    p.two  {
-       background-color: yellow;
-       border : 2px solid rgb(0, 128, 255);
-       border-radius: 5px;
-    }
-    p.three  {
-       background-color: rgb(57, 189, 112);
-       border : 5px dotted grey;
-    }
-</style>
-</head>
-<body>
-<p class="one">Hello World</p>
-<p class="two">Hello World</p>
-<p class="three">Hello World</p>
-</body>
-
-<p>第十八題</p>
-<html>
-<head>
-<style>
-    p.first {
-        font: bold 20px Times, serif ;
-        text-decoration: overline;
-        text-shadow: 3px 1px 0px lightpink; 
-    }
-    p.second {
-        font: bold oblique 15px Times, serif ; 
-        border : 1px solid black;
-        outline:  ridge yellow;
-    }
-    p.third {
-        font: bold 15px times, serif ;
-        text-decoration: underline;
-        text-align: right;
-    }
-</style>
-</head>
-<body>
-<p class="first">This is heading 1</p>
-<p class="second">This is heading 2</p>
-<p class="third">This is heading 3</p>
-</body>
-</html>
-
-<p>第二十題</p>
-<style>
-      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁設計作業彙整</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    
+    <style>
         body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e9ecef;
+        }
+        .question-section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+
+        /* ================= 第十六題 CSS ================= */
+        p.q16-one  {
+           background-color: lightblue;
+           border : 7px double orangered;
+        }
+        p.q16-two  {
+           background-color: yellow;
+           border : 2px solid rgb(0, 128, 255);
+           border-radius: 5px;
+        }
+        p.q16-three  {
+           background-color: rgb(57, 189, 112);
+           border : 5px dotted grey;
+        }
+
+        /* ================= 第十八題 CSS ================= */
+        p.q18-first {
+            font: bold 20px Times, serif ;
+            text-decoration: overline;
+            text-shadow: 3px 1px 0px lightpink; 
+        }
+        p.q18-second {
+            font: bold oblique 15px Times, serif ; 
+            border : 1px solid black;
+            outline:  ridge yellow;
+        }
+        p.q18-third {
+            font: bold 15px times, serif ;
+            text-decoration: underline;
+            text-align: right;
+        }
+
+        /* ================= 第二十題 CSS ================= */
+        .q20-wrapper {
             background-color: #f2f2f2;
             font-family: serif;
             padding: 40px;
+            position: relative;
         }
-
-        .container {
+        .q20-container {
             background-color: #ffffff;
             padding: 20px 40px;
             box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
             min-height: 200px;
             max-width: 800px;
         }
-        table {
+        .q20-container table {
             border-collapse: collapse;
             width: 25px;
         }
-
-        th, td {
+        .q20-container th, .q20-container td {
             border: 1px solid black;
             padding: 10px;
             text-align: left;
         }
-
-        th {
+        .q20-container th {
             background-color: #808080; 
             color: white;          
             font-weight: bold;
         }
-
-
-        tbody tr:nth-child(odd) {
+        .q20-container tbody tr:nth-child(odd) {
             background-color: yellow;
         }
-
-
-        .fixed-box {
-           
+        .q20-fixed-box {
             position: fixed;
             top: 60px;   
             right: 80px; 
-
             border: 3px solid #6aa84f; 
             background-color: white;
             padding: 10px;
             width: 140px;
             line-height: 1.4;
+            z-index: 100; /* 確保懸浮在最上層 */
         }
-    </style>
-</head>
-<body>
 
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>3</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="fixed-box">
-        This div<br>
-        element has<br>
-        position: fixed;
-    </div>
-
-</body>
-</html>
-
-<p>第二十一題</p>
-<html>
-    <style>
-    body {
+        /* ================= 第二十一題 CSS ================= */
+        .q21-wrapper {
             background-color: #f4f4f4;
             font-family: serif;
             padding: 40px;
             font-size: 18px;
         }
-
-      
-        .container {
+        .q21-container {
             background-color: #ffffff;
             padding: 30px;
             box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
@@ -192,9 +116,7 @@
             margin: 0 auto;
             line-height: 1.4;
         }
-
-       
-        .float-box {
+        .q21-float-box {
             float: right;         
             width: 130px;            
             height: 160px;          
@@ -204,31 +126,222 @@
             margin-left: 20px;     
             margin-bottom: 10px;
         }
-
-
-        .inline-box {
+        .q21-inline-box {
             display: inline-block;  
             background-color: yellow;
             border: 1px solid blue;
             padding: 2px 4px;
             margin: 0 2px;
         }
-  </style>
+
+        /* ================= 第二十三題 CSS ================= */
+        .q23-wrapper {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f3f3; 
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .q23-main-container {
+            width: 496px; 
+            background-color: #ffffff;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .q23-top-header {
+            background-color: #f6f6f6; 
+            height: 35px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 18px; 
+            border-bottom: 1px solid #eaeaea;
+        }
+        .q23-info-btn {
+            height: 22px;              
+            border-radius: 8px;        
+            background-color: #ffffff; 
+            border: 1px solid #2f2f2f; 
+            color: #2f2f2f;            
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;          
+            font-size: 13px;           
+            cursor: pointer;
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+        .q23-info-btn:hover {
+            background-color: #f0f0f0;
+        }
+        .q23-image-wrapper {
+            padding: 20px 26px; 
+            display: flex;
+            justify-content: center;
+        }
+        .q23-preview-image {
+            width: 450px; 
+            height: 240px; 
+            background-color: #ffcc80;
+            object-fit: cover;
+            display: block;
+        }
+        .q23-details-section {
+            display: none; 
+            padding: 0 26px 20px 26px;
+        }
+        .q23-details-section.show {
+            display: block;
+        }
+        .q23-detail-item {
+            background-color: #a5f0aa; 
+            color: #2f2f2f;
+            font-size: 12px;
+            padding: 6px 10px;
+            margin-bottom: 4px;
+            border-radius: 2px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-        
-        <div class="float-box">
-            A float div with overflow auto. A float div with overflow auto. A float div with overflow auto. A float div with overflow auto.
-        </div>
 
-        <div>
-            (Just long sentence.) Let me not to the marriage of true minds Admit impediments. 
-            <span class="inline-box">Love</span> is not love Which alters when it alteration finds, Or bends with the remover to remove: O, no! it is an ever-fix`ed mark, That looks on tempests and is never shaken; It is the star to every wand'ring bark, Whose worth's unknown, although his heighth be taken. 
-            <span class="inline-box">Love's</span> not Time's fool, though rosy lips and cheeks Within his bending sickle's compass come; 
-            <span class="inline-box">Love</span> alters not with his brief hours and weeks, But bears it out even to the edge of doom. If this be error and upon me proved, I never writ, nor no man ever loved.
-        </div>
-
+    <div class="q20-fixed-box">
+        This div<br>
+        element has<br>
+        position: fixed;
     </div>
+
+    <div class="question-section">
+        <h2>第十題</h2>
+        <p>Code example:</p>
+        <pre><code>var person = {
+  firstName: "仲毅",
+  lastName : "王",
+  studentId: "113403057"
+}</code></pre>
+    </div>
+
+    <div class="question-section">
+        <h2>第十二題</h2>
+        <form>
+          <label for="firstName">FirstName:</label><br>
+          <input type="text" id="firstName" name="firstName" value="Your first name"><br>
+          <label for="lastName">LastName:</label><br>
+          <input type="text" id="lastName" name="lastName" value="Your last name"><br>
+          <label for="id">Student ID:</label><br>
+          <input type="text" id="id" name="id" value="Your student ID"><br><br>
+          <input type="submit" value="Submit">
+          <input type="reset" value="Reset">
+        </form>
+    </div>
+
+    <div class="question-section">
+        <h2>第十四題</h2>
+        <svg width="400" height="400">
+            <rect width="100" height="100" style="fill:blue;stroke-width:3px;stroke:rgb(0,0,0)" />
+            <circle cx="100" cy="50" r="40" style="fill:yellow;stroke-width:3px;stroke:red" />
+        </svg>
+    </div>
+
+    <div class="question-section">
+        <h2>第十六題</h2>
+        <p class="q16-one">Hello World</p>
+        <p class="q16-two">Hello World</p>
+        <p class="q16-three">Hello World</p>
+    </div>
+
+    <div class="question-section">
+        <h2>第十八題</h2>
+        <p class="q18-first">This is heading 1</p>
+        <p class="q18-second">This is heading 2</p>
+        <p class="q18-third">This is heading 3</p>
+    </div>
+
+    <div class="question-section q20-wrapper">
+        <h2>第二十題</h2>
+        <div class="q20-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="question-section q21-wrapper">
+        <h2>第二十一題</h2>
+        <div class="q21-container">
+            <div class="q21-float-box">
+                A float div with overflow auto. A float div with overflow auto. A float div with overflow auto. A float div with overflow auto.
+            </div>
+
+            <div>
+                (Just long sentence.) Let me not to the marriage of true minds Admit impediments. 
+                <span class="q21-inline-box">Love</span> is not love Which alters when it alteration finds, Or bends with the remover to remove: O, no! it is an ever-fix`ed mark, That looks on tempests and is never shaken; It is the star to every wand'ring bark, Whose worth's unknown, although his heighth be taken. 
+                <span class="q21-inline-box">Love's</span> not Time's fool, though rosy lips and cheeks Within his bending sickle's compass come; 
+                <span class="q21-inline-box">Love</span> alters not with his brief hours and weeks, But bears it out even to the edge of doom. If this be error and upon me proved, I never writ, nor no man ever loved.
+            </div>
+        </div>
+    </div>
+
+    <div class="question-section q23-wrapper">
+        <div>
+            <h2>第二十三題</h2>
+            <div class="q23-main-container">
+                <div class="q23-top-header">
+                    <button id="actionBtn" class="q23-info-btn">查看資訊</button>
+                </div>
+                
+                <div class="q23-image-wrapper">
+                    <img src="https://via.placeholder.com/450x240/E89F4C/FFFFFF?text=Default+450x240" alt="Landscape Preview" class="q23-preview-image">
+                </div>
+
+                <div id="infoDetails" class="q23-details-section">
+                    <div class="q23-detail-item">修改日期: 2017/10/12</div>
+                    <div class="q23-detail-item">類型: JPG</div>
+                    <div class="q23-detail-item">大小: 466.97KB</div>
+                    <div class="q23-detail-item">路徑: \\designcenter.qnap.com.tw\DesignCenter\PM - RD 橋接人\WEB\Stations\A_Image2PDF\v2\sample</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const actionBtn = document.getElementById('actionBtn');
+        const infoDetails = document.getElementById('infoDetails');
+
+        if(actionBtn && infoDetails) {
+            actionBtn.addEventListener('click', function() {
+
+                infoDetails.classList.toggle('show');
+                
+                if (infoDetails.classList.contains('show')) {
+                    actionBtn.textContent = '收起資訊'; 
+                } else {
+                    actionBtn.textContent = '查看資訊'; 
+                }
+            });
+        }
+    </script>
+
 </body>
 </html>
