@@ -125,7 +125,7 @@
             overflow: auto;        
             border: 3px solid #6aa84f; 
             padding: 10px;
-            margin-left: 20px;     
+            margin-left: 20px;      
             margin-bottom: 10px;
         }
         .q21-inline-box {
@@ -205,7 +205,7 @@
             margin-bottom: 4px;
             border-radius: 2px;
         }
-        /*第二十六題*/
+        /* ================= 第二十六題 CSS ================= */
         .q26-image-container {
             display: flex;
             align-items: center;
@@ -295,6 +295,26 @@
             .q27-green-box, .q27-blue-box {
                 height: 80px; /* 手機版稍微調低高度，比例比較好看 */
             }
+        }
+
+        /* ================= 第三十七題 CSS ================= */
+        .q37-input-group {
+            margin-bottom: 15px;
+        }
+        .q37-input-group input {
+            padding: 5px;
+            font-size: 16px;
+            width: 100px;
+        }
+        .q37-input-group button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .q37-result {
+            font-weight: bold;
+            color: #0056b3;
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -405,7 +425,8 @@
                 </div>
                 
                 <div class="q23-image-wrapper">
-<img src="https://www.ncu.edu.tw/var/file/0/1000/img/3/478253078.jpeg" class="q23-preview-image">                </div>
+                    <img src="https://www.ncu.edu.tw/var/file/0/1000/img/3/478253078.jpeg" class="q23-preview-image">               
+                </div>
 
                 <div id="infoDetails" class="q23-details-section">
                     <div class="q23-detail-item">修改日期: 2017/10/12</div>
@@ -417,25 +438,7 @@
         </div>
     </div>
 
-    <script>
-        const actionBtn = document.getElementById('actionBtn');
-        const infoDetails = document.getElementById('infoDetails');
-
-        if(actionBtn && infoDetails) {
-            actionBtn.addEventListener('click', function() {
-                // Toggle 展開與收起 class
-                infoDetails.classList.toggle('show');
-                
-                // 更新按鈕文字
-                if (infoDetails.classList.contains('show')) {
-                    actionBtn.textContent = '收起資訊'; 
-                } else {
-                    actionBtn.textContent = '查看資訊'; 
-                }
-            });
-        }
-    </script>
-<div class="question-section q26-wrapper">
+    <div class="question-section q26-wrapper">
         <h2>第二十六題</h2>
         <div class="q26-image-container">
             <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" alt="巴黎鐵塔-不變形" class="q26-img-left">
@@ -466,5 +469,74 @@
             
         </div>
     </div>
+
+    <div class="question-section">
+        <h2>第三十七題 (Circle Properties)</h2>
+        <div class="q37-input-group">
+            <label for="circleRadius">Radius (半徑): </label>
+            <input type="number" id="circleRadius" value="5" min="0" step="any">
+            <button onclick="runCircleCalculations()">Calculate</button>
+        </div>
+        <div>
+            <p id="outCircumference" class="q37-result">The circumference is NN</p>
+            <p id="outArea" class="q37-result">The area is NN</p>
+        </div>
+    </div>
+
+    <script>
+        // --- 第二十三題的 JS ---
+        const actionBtn = document.getElementById('actionBtn');
+        const infoDetails = document.getElementById('infoDetails');
+
+        if(actionBtn && infoDetails) {
+            actionBtn.addEventListener('click', function() {
+                // Toggle 展開與收起 class
+                infoDetails.classList.toggle('show');
+                
+                // 更新按鈕文字
+                if (infoDetails.classList.contains('show')) {
+                    actionBtn.textContent = '收起資訊'; 
+                } else {
+                    actionBtn.textContent = '查看資訊'; 
+                }
+            });
+        }
+
+        // --- 第三十七題的 JS ---
+        // 依據題目要求建立 calcCircumfrence 函式 (保留題目原始拼法)
+        function calcCircumfrence(radius) {
+            // 圓周長 = 2 * PI * r
+            let circumference = 2 * Math.PI * radius;
+            // 為了美觀，取小數點後兩位顯示
+            console.log("The circumference is " + circumference);
+            return "The circumference is " + circumference.toFixed(2);
+        }
+
+        // 依據題目要求建立 calcArea 函式
+        function calcArea(radius) {
+            // 圓面積 = PI * r * r
+            let area = Math.PI * radius * radius;
+            console.log("The area is " + area);
+            return "The area is " + area.toFixed(2);
+        }
+
+        // 綁定按鈕點擊事件，執行上述兩個函式並顯示結果
+        function runCircleCalculations() {
+            let radiusInput = document.getElementById('circleRadius').value;
+            let radius = parseFloat(radiusInput);
+            
+            if (isNaN(radius) || radius < 0) {
+                alert("請輸入有效的正數半徑！");
+                return;
+            }
+
+            // 呼叫函式並將回傳字串放入 HTML 元素中
+            document.getElementById('outCircumference').innerText = calcCircumfrence(radius);
+            document.getElementById('outArea').innerText = calcArea(radius);
+        }
+
+        // 頁面載入時先執行一次，顯示預設數字的結果
+        runCircleCalculations();
+    </script>
 </body>
 </html>
